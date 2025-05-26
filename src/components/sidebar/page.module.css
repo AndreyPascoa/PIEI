@@ -1,0 +1,60 @@
+:root {
+    --word: #9896A3;
+    --background: #F9F8FF;
+    --card: #FFFFFF;
+    --primary: #1e3e7a;
+    --secundary: #006ab4;
+    --border: #E6E4F0;
+    --icons: #9896A3;
+    --font: 'Times New Roman', Times, serif;
+}
+
+.title {
+    font-family: var(--font);
+    font-size: 20px;
+    color: var(--secundary);
+}
+
+.dropdown {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: transparent;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    gap: 5px;
+}
+
+.dropdown_item {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    width: 110%;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.dropdown_text {
+    font-size: 13px;
+    color: var(--word);
+    margin-left: 12px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.icon {
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    color: var(--icons);
+    height: 16px;
+    width: 16px;
+}
+
+.sub_title {
+    color: var(--word);
+    font-size: 14px;
+    font-weight: 200;
+}
