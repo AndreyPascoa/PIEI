@@ -9,34 +9,41 @@ import { Projeto, Task } from "./type.module";
 
 export default function Sidebar() {
     const [open, setOpen] = useState(false);
-    const [nameUser, setNameUser] = useState("Fernando Endo");
-    const [positionuser, setPositionUser] = useState("Director");
+    const [nameUser, setNameUser] = useState("");
+    const [positionuser, setPositionUser] = useState("");
     const [projetos, setProjetos] = useState<Projeto[]>([]);
     const [tasks, setTasks] = useState<Task[]>([]);
 
     useEffect(() => {
-        const projects = () => {
-            API.post('projeto', { user: 1 })
-                .then((response) => {
-                    const data = response.data;
-                    if (data && data.projetos && data.projetos.length > 0) {
-                        setProjetos(data.projetos);
-                    }
-                });
-        }
 
-        const tasks = () => {
-            API.get('tasks')
-                .then((response) => {
-                    const data = response.data;
-                    if (data && data.tasks && data.tasks.length > 0) {
-                        setTasks(data.tasks);
-                    }
-                })
-        }
+        const userData = sessionStorage.getItem('user');
+        if (userData) {
+            const user = JSON.parse(userData);
+            setNameUser(user.nome);
+            setPositionUser(user.cargo);
+            const projects = () => {
+                API.post('projeto', { user: user.id_user })
+                    .then((response) => {
+                        const data = response.data;
+                        if (data && data.projetos && data.projetos.length > 0) {
+                            setProjetos(data.projetos);
+                        }
+                    });
+            }
 
-        tasks();
-        projects();
+            const tasks = () => {
+                API.post('tasks', {user: user.id_user })
+                    .then((response) => {
+                        const data = response.data;
+                        if (data && data.tasks && data.tasks.length > 0) {
+                            setTasks(data.tasks);
+                        }
+                    })
+            }
+
+            tasks();
+            projects();
+        }
 
     }, []);
 

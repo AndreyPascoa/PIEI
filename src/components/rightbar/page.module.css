@@ -1,5 +1,5 @@
 :root {
-  --word: #9896A3;
+  --word: #999999;
   --background: #F9F8FF;
   --card: #FFFFFF;
   --primary: #1e3e7a;
@@ -104,6 +104,17 @@
   box-sizing: border-box;
 }
 
+.add_item {
+    background-color: #004fe257;
+    color: var(--primary);
+    height: 14px;
+    width: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 3px;
+    margin-left: auto;
+}
+
 .send_icon {
   position: absolute;
   right: 16px;
@@ -154,4 +165,113 @@
   margin: 0;
   font-weight: 300;
   line-height: 1.4;
+}
+
+.notion_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 55%;
+  overflow-y: auto;
+}
+
+.notion_header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--card);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 8px 16px;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.notion_title {
+  font-size: 14px;
+  color: var(--word);
+  font-weight: 300;
+  font-family: var(--font);
+}
+
+.notion_icon {
+  color: var(--icons);
+  height: 16px;
+  width: 16px;
+}
+
+.notion_list {
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+}
+
+.notion_item {
+  display: flex;
+  padding: 8px 4px;
+  border: 1px solid var(--border);
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.1);
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.notion_date {
+  font-size: 12px;
+  color: #A3A3A3;
+  font-weight: 300;
+  font-family: var(--font);
+  opacity: 0.6;
+}
+
+.notion_icon_item {
+  color: var(--icons);
+  height: 16px;
+  width: 16px;
+}
+
+.notion_title_item {
+  font-size: 14px;
+  color: #4F4F4F;
+  font-weight: 500;
+  font-family: var(--font);
+  margin: 4px 0;
+  width: 100%;
+  padding: 0px 8px;
+  align-self: center;
+}
+
+.notion_description {
+  font-size: 12px;
+  color: #999999;
+  font-weight: 300;
+  font-family: var(--font);
+  width: 100%;
+  padding: 0px 8px;
+  align-self: center;
+}
+
+.notion_footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0px 8px;
+  margin-top: auto;
+}
+
+.tags {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    min-width:  40px;
+    width: auto;
+    font-size: 10px;
+    font-weight: 200;
+    font-family: var(--font);
+    padding: 2px 6px;
 }
