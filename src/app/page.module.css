@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
-  --word: #BBBBBE;
+  --word: #82808F;
   --background: #F9F8FF;
   --card: #FFFFFF;
   --primary: #1e3e7a;
   --secundary: #006ab4;
   --border: #E6E4F0;
-  --icons: #9896A3
+  --icons: #82808F;
+  --font: "Roboto", sans-serif;
 }
 
 body {
@@ -52,10 +55,62 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .sidebar_right {
   background: var(--card);
   padding: 16px;
   border: 1px solid var(--border);
+}
+
+.bar_options {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 8px;
+  gap: 10px;
+  padding: 16px;
+}
+
+.text_icons {
+  display: flex;
+  color: var(--word);
+  font-family: var(--font);
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  color: var(--icons);
+  height: 20px;
+}
+
+.icons_container {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--card);
+  padding: 4px 5px;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.icons_container:hover {
+  background-color: var(--secundary);
+  border: 1px solid var(--secundary);
+}
+
+.icons_container:hover .text_icons {
+  color: #FFFFFF;
+}
+
+.icons_container:hover .icons {
+  color: #FFFFFF;
 }

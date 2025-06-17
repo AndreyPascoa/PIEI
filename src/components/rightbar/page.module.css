@@ -206,6 +206,9 @@
   list-style: none;
   padding: 5px;
   margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  flex: 1
 }
 
 .notion_item {
@@ -217,6 +220,7 @@
   box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.1);
   align-items: flex-start;
   flex-direction: column;
+  width: 100%;
 }
 
 .notion_date {
@@ -274,4 +278,8 @@
     font-weight: 200;
     font-family: var(--font);
     padding: 2px 6px;
+}
+
+.message_notion {
+  font-size: large;
 }

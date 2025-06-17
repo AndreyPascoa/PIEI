@@ -123,7 +123,7 @@ export default function RightBar() {
                 </div>
 
                 <div className={styles.notion_list}>
-                    {notion.map((notion, idx) => (
+                    {notion.length > 0 ? notion.map((notion, idx) => (
                         <div key={idx} className={styles.notion_item}>
                             <div className={styles.notion_header}>
                                 <NotebookPen className={styles.notion_icon_item} />
@@ -151,7 +151,11 @@ export default function RightBar() {
                             </div>
 
                         </div>
-                    ))}
+                    )) : (
+                        <span className={styles.message_notion}>
+                            Vazio
+                        </span>
+                    )}
                 </div>
             </div>
         </div>

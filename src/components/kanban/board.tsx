@@ -1,3 +1,4 @@
+// Board.tsx
 'use client';
 
 import { useState } from 'react';
@@ -15,8 +16,8 @@ const initialColumns: ColumnType[] = [
         id: '1',
         title: 'Manage Finances',
         tags: [
-          { name: 'Economic', color: '#7F56D9' },
-          { name: 'Finance', color: '#17B26A' }
+          { nome: 'Economic', color_text: '#7F56D9', color_background: '#E9D7FE', status: 0 },
+          { nome: 'Finance', color_text: '#17B26A', color_background: '#A6F4C5', status: 0 }
         ],
         user: 'mustafa',
         priority: 'High'
@@ -25,9 +26,9 @@ const initialColumns: ColumnType[] = [
         id: '2',
         title: 'Fix Instagram content issues',
         tags: [
-          { name: 'Marketing', color: '#1570EF' },
-          { name: 'Social', color: '#12B76A' },
-          { name: 'Contents', color: '#F79009' }
+          { nome: 'Marketing', color_text: '#1570EF', color_background: '#D1E9FF', status: 0 },
+          { nome: 'Social', color_text: '#12B76A', color_background: '#A6F4C5', status: 0 },
+          { nome: 'Contents', color_text: '#F79009', color_background: '#FEDF89', status: 0 }
         ],
         user: 'mustafa',
         priority: 'Small'
@@ -36,8 +37,8 @@ const initialColumns: ColumnType[] = [
         id: '5',
         title: 'Integrate ChatGPT',
         tags: [
-          { name: 'Website', color: '#F04438' },
-          { name: 'AI', color: '#17B26A' }
+          { nome: 'Website', color_text: '#F04438', color_background: '#FECDCA', status: 0 },
+          { nome: 'AI', color_text: '#17B26A', color_background: '#A6F4C5', status: 0 }
         ],
         user: 'mustafa',
         priority: 'Medium'
@@ -53,9 +54,9 @@ const initialColumns: ColumnType[] = [
         id: '3',
         title: 'Re design the logo',
         tags: [
-          { name: 'Visual ID', color: '#9E77ED' },
-          { name: 'Design', color: '#17B26A' },
-          { name: 'Logo', color: '#1570EF' }
+          { nome: 'Visual ID', color_text: '#9E77ED', color_background: '#E9D7FE', status: 0 },
+          { nome: 'Design', color_text: '#17B26A', color_background: '#A6F4C5', status: 0 },
+          { nome: 'Logo', color_text: '#1570EF', color_background: '#D1E9FF', status: 0 }
         ],
         user: 'mustafa',
         priority: 'Small'
@@ -64,7 +65,7 @@ const initialColumns: ColumnType[] = [
         id: '6',
         title: 'Start the new marketing strategy',
         tags: [
-          { name: 'Marketing', color: '#1570EF' }
+          { nome: 'Marketing', color_text: '#1570EF', color_background: '#D1E9FF', status: 0 }
         ],
         user: 'mustafa',
         priority: 'Medium'
@@ -73,7 +74,7 @@ const initialColumns: ColumnType[] = [
         id: '7',
         title: 'Cancel the shop gifts',
         tags: [
-          { name: 'Commerce', color: '#32D583' }
+          { nome: 'Commerce', color_text: '#32D583', color_background: '#A6F4C5', status: 0 }
         ],
         user: 'mustafa',
         priority: 'Small'
@@ -89,8 +90,8 @@ const initialColumns: ColumnType[] = [
         id: '4',
         title: 'Start how to use the service course',
         tags: [
-          { name: 'Website', color: '#9E77ED' },
-          { name: 'Courses', color: '#FDA29B' }
+          { nome: 'Website', color_text: '#9E77ED', color_background: '#E9D7FE', status: 0 },
+          { nome: 'Courses', color_text: '#FDA29B', color_background: '#FECDCA', status: 0 }
         ],
         user: 'ahmed',
         priority: 'Very High'
@@ -99,8 +100,8 @@ const initialColumns: ColumnType[] = [
         id: '8',
         title: 'Promote the website',
         tags: [
-          { name: 'Website', color: '#9E77ED' },
-          { name: 'Marketing', color: '#12B76A' }
+          { nome: 'Website', color_text: '#9E77ED', color_background: '#E9D7FE', status: 0 },
+          { nome: 'Marketing', color_text: '#12B76A', color_background: '#A6F4C5', status: 0 }
         ],
         user: 'mustafa',
         priority: 'Medium'
@@ -109,7 +110,7 @@ const initialColumns: ColumnType[] = [
         id: '9',
         title: 'Integrate help center',
         tags: [
-          { name: 'Website', color: '#F04438' }
+          { nome: 'Website', color_text: '#F04438', color_background: '#FECDCA', status: 0 }
         ],
         user: 'mustafa',
         priority: 'Small'
@@ -124,10 +125,7 @@ export default function Board() {
   const moveCard = (cardId: string, fromId: string, toId: string) => {
     if (fromId === toId) return;
 
-    const card = columns
-      .find((col) => col.id === fromId)
-      ?.cards.find((c) => c.id === cardId);
-
+    const card = columns.find((col) => col.id === fromId)?.cards.find((c) => c.id === cardId);
     if (!card) return;
 
     setColumns((prev) =>
@@ -146,11 +144,7 @@ export default function Board() {
   return (
     <div className={styles.board}>
       {columns.map((column) => (
-        <Column
-          key={column.id}
-          column={column}
-          moveCard={moveCard}
-        />
+        <Column key={column.id} column={column} moveCard={moveCard} />
       ))}
     </div>
   );

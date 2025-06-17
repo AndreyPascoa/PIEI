@@ -49,7 +49,7 @@ export default function Sidebar() {
 
     return (
         <div className={styles.sidebar_container}>
-            <h1 className={styles.title}>SEIREN TÊXTIL</h1>
+            <h1 className={styles.title}>Painel de Inteligencia Empresarial Integrado (PIEI)</h1>
 
             <div className={styles.dropdown}>
                 <div className={styles.dropdown_item} onClick={() => setOpen(!open)}>
@@ -141,7 +141,7 @@ export default function Sidebar() {
                     <h3 className={styles.name_user}>{nameUser}</h3>
                     <span className={styles.position_user}>{positionuser}</span>
                 </div>
-                <Settings className={styles.icon} />
+                <Settings className={styles.icon} style={{marginLeft: 'auto'}}/>
             </div>
         </div>
     );
