@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# 🧠 PIEI — Front-end da Plataforma PIEI
 
-First, run the development server:
+Este repositório contém o **back-end** da plataforma [PIEI_Server](https://github.com/AndreyPascoa/PIEI_Server), um sistema Kanban inteligente que ajuda microempreendedores (como MEIs) a organizarem suas operações com o suporte da assistente virtual **Hanna**.
+
+> 🌐 Repositório do Back-end: [PIEI_Server (Express)](https://github.com/AndreyPascoa/PIEI_Server)
+
+---
+
+## 🚀 Principais Tecnologias
+
+- **Next.js** + **TypeScript**
+- **Socket.IO** para comunicação em tempo real
+- **Framer Motion** para animações fluidas
+- **Chart.js**, **Recharts** e **Victory** para gráficos
+- **Lucide React** para ícones modernos
+
+---
+
+## ⚙️ Como rodar o projeto
 
 ```bash
+# Clone o repositório
+git clone https://github.com/AndreyPascoa/PIEI.git
+cd PIEI
+
+# Instale as dependências
+npm install
+
+# Rode o servidor de desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A aplicação estará disponível em `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Estrutura do Projeto
 
-## Learn More
+```
+PIEI/
+├── src/
+│   ├── app/             # Páginas e rotas do Next.js
+│   ├── components/      # Componentes reutilizáveis
+│   └── utils/           # Funções auxiliares
+├── public/              # Arquivos públicos e imagens
+├── next.config.ts       # Configuração do Next.js
+├── package.json         # Dependências e scripts
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧠 Sobre a Hanna
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+A **Hanna** é a assistente de IA da plataforma e ajuda você com:
 
-## Deploy on Vercel
+- Respostas para dúvidas sobre tarefas, finanças, estoques e operações
+- Sugestões inteligentes baseadas no seu histórico de uso
+- Avisos e lembretes automatizados
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📌 Próximos Passos
+
+- [ ] Previsões de falhas e insights empresariais baseados em IA
+- [ ] Logs e monitoramento em produção
+- [ ] Testes automatizados
+- [ ] IA personalizada por área da empresa
+
+---
+
+## 🧑‍💻 Autor
+
+Desenvolvido por [Andrey Pascoa](https://github.com/AndreyPascoa)
+
+Sinta-se à vontade para contribuir, reportar problemas ou dar sugestões! 🚀
